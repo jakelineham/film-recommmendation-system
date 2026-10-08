@@ -1,5 +1,14 @@
 <script setup>
-import Search from './components/Search.vue'
+import SearchBox from './components/SearchBox.vue'
+import {ref} from "vue";
+
+const selectedFilms = ref(["","","",""]);
+
+function selectFilm(film, index) {
+    selectedFilms.value[index] = film;
+    console.log(selectedFilms.value);
+}
+
 </script>
 
 <template>
@@ -8,6 +17,14 @@ import Search from './components/Search.vue'
   </header>
 
   <main>
-    <Search />
+    <h2>Search for up to 4 films</h2>
+
+    <SearchBox @filmSelected="selectFilm($event, 0)" />
+    
+    <SearchBox @filmSelected="selectFilm($event, 1)" />
+    
+    <SearchBox @filmSelected="selectFilm($event, 2)" />
+    
+    <SearchBox @filmSelected="selectFilm($event, 3)" />
   </main>
 </template>
