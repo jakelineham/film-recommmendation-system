@@ -1,12 +1,12 @@
 <script setup>
 import SearchBox from './components/SearchBox.vue'
+import Recommend from './components/Recommend.vue'
 import {ref} from "vue";
 
 const selectedFilms = ref(["","","",""]);
 
 function selectFilm(film, index) {
     selectedFilms.value[index] = film;
-    console.log(selectedFilms.value);
 }
 
 </script>
@@ -26,5 +26,7 @@ function selectFilm(film, index) {
     <SearchBox @filmSelected="selectFilm($event, 2)" />
     
     <SearchBox @filmSelected="selectFilm($event, 3)" />
+
+    <Recommend :selectedFilms="selectedFilms"/>
   </main>
 </template>
