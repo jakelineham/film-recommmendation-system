@@ -44,6 +44,37 @@ app.get('/search', async (req, res) => {
   }
 });
 
+app.get('/recommend', async (req, res) => {
+  const filmId = req.query.filmId;
+
+  //If there is no id given prevent an API call
+  if (!filmId) {
+    return res.json([]);
+  }
+
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/movie/${filmId}/recommendations`,
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.TMDB_KEY}`
+        }
+      }
+    );
+
+    const recommendations = await response.json();
+
+    res.json(recommendations.results);
+
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      error: 'Could not connect to TMDB API'
+    });
+  }
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
