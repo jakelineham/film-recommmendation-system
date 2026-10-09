@@ -21,12 +21,17 @@ async function getRecs(films) {
 
     emptyFilms.value = false;
 
+    const unfilteredRecs = [];
+
     //Get the recommendations for each film chosen
     for (const film of filmsFiltered) {
         const recs = await getRecApi(film);
 
-        recommendations.value.push(...recs);
+        unfilteredRecs.push(...recs);
     }
+
+    //Choose 5 random films from the given recs to be shown
+    recommendations.value = unfilteredRecs.sort(() => Math.random() - 0.5).slice(0, 5);
 };
 
 async function getRecApi(film) {
@@ -50,7 +55,9 @@ async function getRecApi(film) {
         <div 
         v-if="recommendations.length > 0" 
         v-for="film in recommendations" :key="film.id">
-            {{ film.title }}
+            <h3>{{ film.title }}</h3>
+            <img :src="`https://image.tmdb.org/t/p/w185/${ film.poster_path }`"/>
+            <p>{{ film.overview }}</p>
         </div>
     </div>
 </template>
