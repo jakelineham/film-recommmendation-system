@@ -55,7 +55,10 @@ function clear() {
             v-for="film in searchResults" 
             :key = "film.id"
             @click="selectFilm(film)">
-                {{ film.title }}
+                {{ film.title }} 
+                <div v-if="film.release_date">
+                    ({{ film.release_date.substring(0, 4) }})
+                </div>
             </button>
         </div>
     </div>
