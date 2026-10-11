@@ -48,16 +48,28 @@ async function getRecApi(film) {
 
 <template>
     <div>
-        <button @click="getRecs(selectedFilms)">Get recommendations</button>
+        <button 
+        @click="getRecs(selectedFilms)"
+        id="recommendButton">
+        Get recommendations
+        </button>
 
-        <div v-if="emptyFilms">Please enter a film to get recommendations</div>
+        <div v-if="emptyFilms" id="emptyFilmsMessage">
+            Please enter a film to get recommendations
+        </div>
 
         <div 
         v-if="recommendations.length > 0" 
-        v-for="film in recommendations" :key="film.id">
-            <h3>{{ film.title }}</h3>
-            <img :src="`https://image.tmdb.org/t/p/w185/${ film.poster_path }`"/>
-            <p>{{ film.overview }}</p>
+        id="recommendationsGrid"
+        >
+            <div
+            v-for="film in recommendations" 
+            :key="film.id"
+            class="filmDetails">
+                <h3>{{ film.title }}</h3>
+                <img :src="`https://image.tmdb.org/t/p/w185/${ film.poster_path }`"/>
+                <p>{{ film.overview }}</p>
+            </div>
         </div>
     </div>
 </template>

@@ -19,14 +19,16 @@ function selectFilm(film, index) {
   <main>
     <h2>Search for up to 4 films</h2>
 
-    <SearchBox @filmSelected="selectFilm($event, 0)" />
-    
-    <SearchBox @filmSelected="selectFilm($event, 1)" />
-    
-    <SearchBox @filmSelected="selectFilm($event, 2)" />
-    
-    <SearchBox @filmSelected="selectFilm($event, 3)" />
+    <div id="searchBoxes">
+      <SearchBox @filmSelected="selectFilm($event, 0)" />
 
+      <SearchBox @filmSelected="selectFilm($event, 1)" />
+
+      <SearchBox @filmSelected="selectFilm($event, 2)" />
+
+      <SearchBox @filmSelected="selectFilm($event, 3)" />
+    </div>
+    
     <Recommend :selectedFilms="selectedFilms"/>
   </main>
 </template>

@@ -37,23 +37,28 @@ function clear() {
 </script>
 
 <template>
-    <div>
-        <button @click="clear">Clear</button>
+    <div class="searchBox">
+        <div class="searchInput">
+            <button @click="clear" class="clearButton">Clear</button>
 
-        <form @submit.prevent="submit">
-            <input
-            v-model="filmName"
-            placeholder="Search for a film"/>
+            <form @submit.prevent="submit" class="searchForm">
+                <input
+                v-model="filmName"
+                placeholder="Search for a film"/>
 
-            <button type="submit">Search</button>
-        </form>
-        
-        <div v-if="searchResults.length > 0">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        <div v-if="searchResults.length > 0" class ="searchResults">
             <button 
             v-for="film in searchResults" 
             :key = "film.id"
             @click="selectFilm(film)">
-                {{ film.title }}
+                {{ film.title }} 
+                <div v-if="film.release_date">
+                    ({{ film.release_date.substring(0, 4) }})
+                </div>
             </button>
         </div>
     </div>
