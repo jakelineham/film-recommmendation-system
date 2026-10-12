@@ -1,0 +1,29 @@
+For this project I decided to use both the Node.js Express and Vue frameworks as I decided to take this as an opportunity to learn some new technologies as well as try to strengthen my skills in JavaScript. As within prior projects, my time has mainly been focused on working in the backend in Python and Java. I chose both of these frameworks as I researched what the most popular front/backend frameworks were and consistenly saw Node.js and Vue included by various sources and saw that they also both revolve around JavaScript. I already knew how to create a web app in both the front and backend so I tried to adapt these skills to learn how to do this with new frameworks. 
+
+To start the project and to help with the initial setup, I looked at the quick start guides for both Vue and Node.js Express from their official websites, where I found them to be quite helpful. As within the Express.js documentation site, they provide an example server file to get you started:
+https://expressjs.com/en/5x/starter/hello-world/
+
+For Vue I needed to research a lot of new information as it has quite a few features that are handled differently to a framework I'm familiar with like React even though they are quite similar in function. I needed to research:
+* Conditional rendering (v-if)
+* Rendering lists (v-for)
+* V-model for forms
+* Using "ref"s
+* Emits and props
+
+To research these I would search Google for some tutorials/guides on whatever was needed, as for example I was searching how I would implement conditional rendering in Vue. I would keep coming back to the same few websites, some of these being the offical documentation sites, w3schools.com and codefinity.com. I assessed the information from these sites by a few factors. I found that the sites I kept using gave me the information I needed in a fairly easy to understand manner while also providing examples of their use. I would not stick to just one website to get my information from in case there was any information that was potentially missed out or incorrect from one site to another.
+
+One thing that massively helped was when setting up Vue, I added the default/template app so that it would be there when the app was initially run. By looking through these provided example files, I was able to get a better understanding of how Vue worked compared to a similar framework like React. This helped as before I had started fully working on the project I was noticing these similarities and looking at the overall structure of the framework.
+
+For Express.js it was relatively straightforward, as once I had the basis of the example server to go off of, I realised it was quite similar in function to how I've used Flask in Python in the past. Because of this I was able to complete the backend functionality without researching too much outside of refeshing my memory and with help writing in JavaScript.
+
+# Problems or approaches that didn't work
+
+Before I start work on any project, I plan out what I'm going to do and how I'm going to do it. In this case I planned out the frontend and backend frameworks and the overall system design with the search boxes and recommendation list. However when initially planning the project, my original idea was to use incorporate an AI chatbot to ask for a list of recommended films for the user based on their input. I had planned this to not only try and learn how I would incorporate this into a backend server but to try and get a more dynamic list of recommended films, as the AI could recommend films based on multiple inputs instead of just one at a time like it's currently done. However, after researching this I was unable to find an API or integration for this that would be free to use while also giving me the functionality I wanted, so I had to abandon this idea for the project before development began. This then lead to me discovering the TMDB API that is currently used within the system and the recommendation route offered within it.
+
+Another approach was in my original design I had planned on having the search results be displayed in rows underneath the search box. But after implementing this, I found that the buttons used to represent each film would then be near unreadable for long film names. So to fix this, I adapted the search results so that they appeared in a column rather than rows, meaning that any long titles can now be easily read. By doing this I also found that it made the results appear less cluttered and more readable for the user, which I felt improved on my original design greatly.
+
+# What I learned
+
+From this short project I learned how to use both Express.js and Vue in a full stack web application, but from this I found that they are both quite similar to other front/backend frameworks I've used before, with Vue being quite similar to React in the way the page is structured with React using states and Vue using refs for example. The same can be said for Flask and Node.js Express, as developing using Express was a fairly quick process to learn for me due to my past experiences using Flask. This has made me curious to try developing and using other similar web frameworks to see first hand just how similar and how different they can be to use as I did not expect them both to feel so familiar to me.
+
+I also found that this project also reinforced that I'm also a learner who learns by example. For instance, I saw a tutorial online that simply told me about a certain feature within Vue called props, but I was still confused, but by asking ChatGPT for an explanation as well as an example of it within my own code (As also mentioned within AI.md), I was able to get a better understanding, take that example and adapt it to what I needed to implement, rather than just reading about it and blindly attempting it myself. As when going back to look up props after this I found myself understanding the concepts much better.
