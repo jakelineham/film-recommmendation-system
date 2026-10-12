@@ -4,42 +4,42 @@ I have created a film recommendation system, as I love watching films and a prob
 ![Example screenshot](/Example%20screenshot.png)
 
 # How to run it
-To run the web app you need to install Node.js and have npm installed (npm is included with the Node.js installation):\
+To run the web app you need to install Node.js and have npm installed *(npm is included with the Node.js installation)*:\
 https://nodejs.org/en/download
 
-You also need an API key for TMDB (The Movie Database) which you can get from here (An account is required but it's free to use for small projects such as this):\
+You also need an API key for TMDB (The Movie Database) which you can get from here *(An account is required but it's free to use for small projects such as this)*:\
 https://www.themoviedb.org/settings/api
 
-The correct API key for you to use for this is the one labelled API Read Access Token on the above webpage.
+The correct API key for you to use for this is the one labelled **API Read Access Token** on the above webpage.
 
 ## Within the backend folder of the repository
-    Create a file named **.env**
+Create a file named `.env`
 
-    Open .env in a text editor such as Notepad or within your IDE and within it write (Where abc123 is replaced with your API Read Access Token):\
-    `TMDB_KEY=abc123`
+Open .env in a text editor such as Notepad or within your IDE and within it write *(Where abc123 is replaced with your API Read Access Token)*:\
+`TMDB_KEY=abc123`
 
-    Run:
-    ```
-    npm install
-    node server.js
-    ```
+Run:
+```
+npm install
+node server.js
+```
 
-    Keep the backend terminal open and running while also running the frontend server in a separate terminal.
+Keep the backend terminal open and running while also running the frontend server in a separate terminal.
 
-    To verify that your API key is being read by the server, when server.js is run you will see this within the output:
-    `◇ injected env (1) from .env`
+To verify that your API key is being read by the server, when server.js is run you will see this within the output:\
+`◇ injected env (1) from .env`
 
 ## Within the frontend folder of the repository
-    Run:
-    ```
-    npm install
-    npm run build
-    npm run preview
-    ```
-    Then navigate to the port on localhost that is shown on a web browser.
+Run:
+```
+npm install
+npm run build
+npm run preview
+```
+Then navigate to the port on localhost that is shown on a web browser.
 
 ### If you want to run the tests for the frontend:
-    Run `npm run test:unit`
+Run `npm run test:unit`
 
 # How it works
 
